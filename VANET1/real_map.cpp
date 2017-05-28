@@ -53,7 +53,7 @@ void getmeet() {
 			for (t = 0; t < NUM_U; t++) {//遍历路边单元
 				int x = cars[i].route[j].rx - units[t].rx;
 				int y = cars[i].route[j].ry - units[t].ry;
-				double d = sqrt(pow(x, x) + pow(y, y));
+				double d = sqrt(pow(x, 2) + pow(y, 2));
 				if (d < UNIT_RADIUS) {
 					cars[i].route[j].uid = t;//录入路边单元编号
 					cars[i].route[j].u2v_distance = d;//录入路边单元距离
@@ -67,7 +67,7 @@ void getmeet() {
 			for (t = 0; t < NUM_V; t++) {//遍历车辆
 				int x = cars[i].route[j].rx - cars[t].route[j].rx;
 				int y = cars[i].route[j].ry - cars[t].route[j].ry;
-				double d = sqrt(pow(x, x) + pow(y, y));
+				double d = sqrt(pow(x, 2) + pow(y, 2));
 				if (d < VEHICLE_RADIUS && i != t && cars[i].route[j].num_v < MAX_PASSING_VEHICLE) {
 					cars[i].route[j].vid[cars[i].route[j].num_v] = t;//录入车辆编号
 					cars[i].route[j].v2v_distance[cars[i].route[j].num_v] = d;//录入车辆距离

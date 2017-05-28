@@ -60,17 +60,18 @@ void run()
 	set_seed();//初始化随机种子
 
 	if (REAL_MAP) {
+		cout << "Coordinate acquiring..." << endl;
 		readfile();//获取车辆&路边单元坐标
 		getmeet();//获取相遇情况：路边单元&车辆
-		/*for (int i = 0; i < NUM_V; i++) {//查看相遇情况
-			for (int j = 0; j < C*T; j++) {
-				cout << i << "-->" << j << endl;
-				cout << "  相遇单元：" << cars[i].route[j].uid << "距离为：" << cars[i].route[j].u2v_distance << endl;
-				for (int t = 0; t < cars[i].route[j].num_v; t++) {
-					cout << "   相遇车辆：" << cars[i].route[j].vid[t] << "距离为：" << cars[i].route[j].v2v_distance[t] << endl;
-				}
-			}
-		}*/
+		//for (int i = 0; i < NUM_V; i++) {//查看相遇情况
+		//	for (int j = 0; j < C*T; j++) {
+		//		cout << i << "-->" << j << endl;
+		//		cout << "  相遇单元：" << cars[i].route[j].uid << "距离为：" << cars[i].route[j].u2v_distance << endl;
+		//		for (int t = 0; t < cars[i].route[j].num_v; t++) {
+		//			cout << "   相遇车辆：" << cars[i].route[j].vid[t] << "距离为：" << cars[i].route[j].v2v_distance[t] << endl;
+		//		}
+		//	}
+		//}
 		//system("pause");
 	}
 	else {
