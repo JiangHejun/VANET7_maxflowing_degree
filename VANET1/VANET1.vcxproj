@@ -1,0 +1,368 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{56429931-440E-4533-BBEA-9B229C11008A}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>VANET1</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.14393.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_LIB;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <StackReserveSize>524288000</StackReserveSize>
+      <AdditionalDependencies>gdi32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Text Include="1.txt" />
+    <Text Include="10.txt" />
+    <Text Include="100.txt" />
+    <Text Include="101.txt" />
+    <Text Include="102.txt" />
+    <Text Include="103.txt" />
+    <Text Include="104.txt" />
+    <Text Include="105.txt" />
+    <Text Include="106.txt" />
+    <Text Include="107.txt" />
+    <Text Include="108.txt" />
+    <Text Include="109.txt" />
+    <Text Include="11.txt" />
+    <Text Include="110.txt" />
+    <Text Include="111.txt" />
+    <Text Include="112.txt" />
+    <Text Include="113.txt" />
+    <Text Include="114.txt" />
+    <Text Include="115.txt" />
+    <Text Include="116.txt" />
+    <Text Include="117.txt" />
+    <Text Include="118.txt" />
+    <Text Include="119.txt" />
+    <Text Include="12.txt" />
+    <Text Include="120.txt" />
+    <Text Include="121.txt" />
+    <Text Include="122.txt" />
+    <Text Include="123.txt" />
+    <Text Include="124.txt" />
+    <Text Include="125.txt" />
+    <Text Include="126.txt" />
+    <Text Include="127.txt" />
+    <Text Include="128.txt" />
+    <Text Include="129.txt" />
+    <Text Include="13.txt" />
+    <Text Include="130.txt" />
+    <Text Include="131.txt" />
+    <Text Include="132.txt" />
+    <Text Include="133.txt" />
+    <Text Include="134.txt" />
+    <Text Include="135.txt" />
+    <Text Include="136.txt" />
+    <Text Include="137.txt" />
+    <Text Include="138.txt" />
+    <Text Include="139.txt" />
+    <Text Include="14.txt" />
+    <Text Include="140.txt" />
+    <Text Include="141.txt" />
+    <Text Include="142.txt" />
+    <Text Include="143.txt" />
+    <Text Include="144.txt" />
+    <Text Include="145.txt" />
+    <Text Include="146.txt" />
+    <Text Include="147.txt" />
+    <Text Include="148.txt" />
+    <Text Include="149.txt" />
+    <Text Include="15.txt" />
+    <Text Include="150.txt" />
+    <Text Include="151.txt" />
+    <Text Include="152.txt" />
+    <Text Include="153.txt" />
+    <Text Include="154.txt" />
+    <Text Include="155.txt" />
+    <Text Include="156.txt" />
+    <Text Include="157.txt" />
+    <Text Include="158.txt" />
+    <Text Include="159.txt" />
+    <Text Include="16.txt" />
+    <Text Include="160.txt" />
+    <Text Include="161.txt" />
+    <Text Include="162.txt" />
+    <Text Include="163.txt" />
+    <Text Include="164.txt" />
+    <Text Include="165.txt" />
+    <Text Include="166.txt" />
+    <Text Include="167.txt" />
+    <Text Include="168.txt" />
+    <Text Include="169.txt" />
+    <Text Include="17.txt" />
+    <Text Include="170.txt" />
+    <Text Include="171.txt" />
+    <Text Include="172.txt" />
+    <Text Include="173.txt" />
+    <Text Include="174.txt" />
+    <Text Include="175.txt" />
+    <Text Include="176.txt" />
+    <Text Include="177.txt" />
+    <Text Include="178.txt" />
+    <Text Include="179.txt" />
+    <Text Include="18.txt" />
+    <Text Include="180.txt" />
+    <Text Include="181.txt" />
+    <Text Include="182.txt" />
+    <Text Include="183.txt" />
+    <Text Include="184.txt" />
+    <Text Include="185.txt" />
+    <Text Include="186.txt" />
+    <Text Include="187.txt" />
+    <Text Include="188.txt" />
+    <Text Include="189.txt" />
+    <Text Include="19.txt" />
+    <Text Include="190.txt" />
+    <Text Include="191.txt" />
+    <Text Include="192.txt" />
+    <Text Include="193.txt" />
+    <Text Include="194.txt" />
+    <Text Include="195.txt" />
+    <Text Include="196.txt" />
+    <Text Include="197.txt" />
+    <Text Include="198.txt" />
+    <Text Include="199.txt" />
+    <Text Include="2.txt" />
+    <Text Include="20.txt" />
+    <Text Include="200.txt" />
+    <Text Include="201.txt" />
+    <Text Include="202.txt" />
+    <Text Include="203.txt" />
+    <Text Include="204.txt" />
+    <Text Include="205.txt" />
+    <Text Include="206.txt" />
+    <Text Include="207.txt" />
+    <Text Include="208.txt" />
+    <Text Include="209.txt" />
+    <Text Include="21.txt" />
+    <Text Include="210.txt" />
+    <Text Include="211.txt" />
+    <Text Include="212.txt" />
+    <Text Include="213.txt" />
+    <Text Include="214.txt" />
+    <Text Include="215.txt" />
+    <Text Include="216.txt" />
+    <Text Include="217.txt" />
+    <Text Include="218.txt" />
+    <Text Include="219.txt" />
+    <Text Include="22.txt" />
+    <Text Include="220.txt" />
+    <Text Include="221.txt" />
+    <Text Include="222.txt" />
+    <Text Include="223.txt" />
+    <Text Include="224.txt" />
+    <Text Include="225.txt" />
+    <Text Include="226.txt" />
+    <Text Include="227.txt" />
+    <Text Include="228.txt" />
+    <Text Include="229.txt" />
+    <Text Include="23.txt" />
+    <Text Include="230.txt" />
+    <Text Include="231.txt" />
+    <Text Include="232.txt" />
+    <Text Include="233.txt" />
+    <Text Include="234.txt" />
+    <Text Include="235.txt" />
+    <Text Include="236.txt" />
+    <Text Include="237.txt" />
+    <Text Include="238.txt" />
+    <Text Include="239.txt" />
+    <Text Include="24.txt" />
+    <Text Include="240.txt" />
+    <Text Include="241.txt" />
+    <Text Include="242.txt" />
+    <Text Include="243.txt" />
+    <Text Include="244.txt" />
+    <Text Include="245.txt" />
+    <Text Include="246.txt" />
+    <Text Include="247.txt" />
+    <Text Include="248.txt" />
+    <Text Include="249.txt" />
+    <Text Include="25.txt" />
+    <Text Include="250.txt" />
+    <Text Include="251.txt" />
+    <Text Include="252.txt" />
+    <Text Include="253.txt" />
+    <Text Include="254.txt" />
+    <Text Include="255.txt" />
+    <Text Include="256.txt" />
+    <Text Include="257.txt" />
+    <Text Include="258.txt" />
+    <Text Include="259.txt" />
+    <Text Include="26.txt" />
+    <Text Include="27.txt" />
+    <Text Include="28.txt" />
+    <Text Include="29.txt" />
+    <Text Include="3.txt" />
+    <Text Include="30.txt" />
+    <Text Include="31.txt" />
+    <Text Include="32.txt" />
+    <Text Include="33.txt" />
+    <Text Include="34.txt" />
+    <Text Include="35.txt" />
+    <Text Include="36.txt" />
+    <Text Include="37.txt" />
+    <Text Include="38.txt" />
+    <Text Include="39.txt" />
+    <Text Include="4.txt" />
+    <Text Include="40.txt" />
+    <Text Include="41.txt" />
+    <Text Include="42.txt" />
+    <Text Include="43.txt" />
+    <Text Include="44.txt" />
+    <Text Include="45.txt" />
+    <Text Include="46.txt" />
+    <Text Include="47.txt" />
+    <Text Include="48.txt" />
+    <Text Include="49.txt" />
+    <Text Include="5.txt" />
+    <Text Include="50.txt" />
+    <Text Include="51.txt" />
+    <Text Include="52.txt" />
+    <Text Include="53.txt" />
+    <Text Include="54.txt" />
+    <Text Include="55.txt" />
+    <Text Include="56.txt" />
+    <Text Include="57.txt" />
+    <Text Include="58.txt" />
+    <Text Include="59.txt" />
+    <Text Include="6.txt" />
+    <Text Include="60.txt" />
+    <Text Include="61.txt" />
+    <Text Include="62.txt" />
+    <Text Include="63.txt" />
+    <Text Include="64.txt" />
+    <Text Include="65.txt" />
+    <Text Include="66.txt" />
+    <Text Include="67.txt" />
+    <Text Include="68.txt" />
+    <Text Include="69.txt" />
+    <Text Include="7.txt" />
+    <Text Include="70.txt" />
+    <Text Include="71.txt" />
+    <Text Include="72.txt" />
+    <Text Include="73.txt" />
+    <Text Include="74.txt" />
+    <Text Include="75.txt" />
+    <Text Include="76.txt" />
+    <Text Include="77.txt" />
+    <Text Include="78.txt" />
+    <Text Include="79.txt" />
+    <Text Include="8.txt" />
+    <Text Include="80.txt" />
+    <Text Include="81.txt" />
+    <Text Include="82.txt" />
+    <Text Include="83.txt" />
+    <Text Include="84.txt" />
+    <Text Include="85.txt" />
+    <Text Include="86.txt" />
+    <Text Include="87.txt" />
+    <Text Include="88.txt" />
+    <Text Include="89.txt" />
+    <Text Include="9.txt" />
+    <Text Include="90.txt" />
+    <Text Include="91.txt" />
+    <Text Include="92.txt" />
+    <Text Include="93.txt" />
+    <Text Include="94.txt" />
+    <Text Include="95.txt" />
+    <Text Include="96.txt" />
+    <Text Include="97.txt" />
+    <Text Include="98.txt" />
+    <Text Include="99.txt" />
+    <Text Include="id.txt" />
+    <Text Include="idError.txt" />
+    <Text Include="ReadMe.txt" />
+    <Text Include="roadunits.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="rand.h" />
+    <ClInclude Include="real_map.h" />
+    <ClInclude Include="settting.h" />
+    <ClInclude Include="stable.h" />
+    <ClInclude Include="map.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="unit.h" />
+    <ClInclude Include="vehicle.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="map.cpp" />
+    <ClCompile Include="rand.cpp" />
+    <ClCompile Include="real_map.cpp" />
+    <ClCompile Include="stable.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="vehicle.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

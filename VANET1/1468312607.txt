@@ -1,0 +1,6 @@
+
+* Easy Assignment *
+
+cycle                          1	       2		avg
+flow:         587	     537		562.0
+delay: -1969685403	-982164056		0.0
