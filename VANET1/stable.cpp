@@ -3,7 +3,7 @@
 int U;
 int Ve[MAX_PASSING_VEHICLE];
 
-#define MAXN 10000
+#define MAXN 15000
 #define INF INT_MAX
 #define MIN(a,b) ((a)<(b)?(a):(b))
 #define percent 0.5
@@ -340,7 +340,7 @@ int max_flow(struct vehicle *cars){
 	}
 
 	i=NUM_REQ+1;//构建同一个U或V在不同时间的连线
-	while (i<n-NUM_V*percent*T){ //请求车辆不与时间连线
+	while (i<n){ //请求车辆不与时间连线//-NUM_V*percent*T
 		for(j=1;j<T;j++){
 			Edge[i][i+1].c = NUM_REQ;//定义时间线的权值
 			Edge[i][i+1].f = 0;
