@@ -26,7 +26,7 @@
 #define MAX_PASSING_UNIT 5//最大可通信路边单元数量
 #define MAX_PASSING_VEHICLE 5//最大可通信车辆数量
 
-#define REAL_MAP 1 //1:启用真实数据，0:启用随机化数据
+#define REAL_MAP 0 //1:启用真实数据，0:启用随机化数据
 
 struct coord {//车辆信息
 	double x;//车辆位置 

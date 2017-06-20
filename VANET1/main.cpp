@@ -85,8 +85,12 @@ void run()
 	memset(ratio, 0, sizeof(ratio));
 	memset(defi_ratio, 0, sizeof(defi_ratio));
 	memset(tran, 0, sizeof(tran));
+	clock_t start, end;
 	for(ncycle = 0; ncycle < C; ncycle++) {
+		start = clock();
 		cycle_startup();//核心周期函数
+		end = clock();
+		cout <<"spend time:"<< (double)(end - start)/ CLOCKS_PER_SEC << "s" << endl;
 	}
 }
 
