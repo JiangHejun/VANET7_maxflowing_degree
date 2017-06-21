@@ -87,7 +87,7 @@ void Edmonds_Karp() {
 			_tran++;
 		}
 		int v = (path[_end] - (1 + NUM_REQ + NUM_U*T)) / T;
-		path_num[v][start]++;//更新路径数组
+		path_num[v][start-1]++;//更新路径数组
 		Edge[0][start].f += step;//更新src-->数据的变容量
 	}
 	/*--------------------------------数据处理区---------------------------------------*/
