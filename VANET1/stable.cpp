@@ -359,7 +359,7 @@ int max_flow(struct vehicle *cars){
 	}
 
 	//获取中继网入度最小值和最大值
-	int max_in = 0, min_in = INF;
+	/*int max_in = 0, min_in = INF;
 	for (int i = 1 + NUM_REQ + NUM_U*T; i < n; i++) {
 		if (vertex[i].in == 0)
 			continue;
@@ -367,7 +367,7 @@ int max_flow(struct vehicle *cars){
 			min_in = vertex[i].in;
 		if (vertex[i].in > max_in)
 			max_in = vertex[i].in;
-	}
+	}*/
 	//cout << max_in << " " << min_in << endl;
 	//system("pause");
 

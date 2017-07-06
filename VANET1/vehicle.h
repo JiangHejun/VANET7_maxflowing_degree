@@ -14,7 +14,7 @@ struct vehicle {//车辆数组
 	int nsr; /* Number of satisfied requests.已满足数据的数量 */
 	int recieving; /* The item that is recieving, -1 if none. 车辆正在传输数据，-1表示无*/
 	int timeout; /* Timeout for transfering one item. 传输超时*/
-	int npu; /* Number of passing units. 目前传输路边单元数组的定位*/
+	int npu; /* Number of passing units. 可传输路边单元的数量*/
 };
 
 void clean_vehicle(struct vehicle *v);
