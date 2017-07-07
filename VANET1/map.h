@@ -7,12 +7,12 @@
 #include <stdio.h>
 
 /* Number of intersections. */
-#define HOR_INT 8//网格格数，水平
-#define VER_INT 6//网格格数，垂直
+#define HOR_INT 10//网格格数，水平
+#define VER_INT 10//网格格数，垂直
 
 /* Length of segments in metres. */
-#define HOR_LEN 1000//每个网格长度,水平
-#define VER_LEN 1000//每个网格长度,垂直
+#define HOR_LEN 700//每个网格长度,水平
+#define VER_LEN 700//每个网格长度,垂直
 
 //方向
 #define NORTH 0//北

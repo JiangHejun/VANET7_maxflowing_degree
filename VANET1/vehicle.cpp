@@ -31,7 +31,6 @@ void init_vehicle(struct vehicle *v)
 
 //查找可通信车辆
 int find_vehicle(struct vehicle *v, int t, double x, double y){
-	int i;
 	double distance = sqrt((x - v->route[t].x)*(x - v->route[t].x)+(y - v->route[t].y)*(y - v->route[t].y));
 	if(distance < VEHICLE_RADIUS){//如果小于车辆通信半径
 		return distance;//返回距离
@@ -58,18 +57,18 @@ void get_passing_units(struct vehicle *v, int l, int r)
 
 
 /* Make random number of random requests. */
-//void make_requests(struct vehicle *v)
-//{
-//	int i, cnt, item;
-//	memset(v->requests,-1,sizeof(v->requests));
-//	v->nit = rand_range_int(1, MAX_REQ + 1);
-//	cnt = 0;
-//	while (cnt < v->nit) {
-//		item = rand_range_int(0, NUM_REQ);
-//		for(i = 0; i < cnt && v->requests[i] != item; i++);
-//		if(i == cnt) v->requests[cnt++] = item;
-//	}
-//}
+void make_requests(struct vehicle *v)
+{
+	int i, cnt, item;
+	memset(v->requests,-1,sizeof(v->requests));
+	v->nit = rand_range_int(1, MAX_REQ + 1);
+	cnt = 0;
+	while (cnt < v->nit) {
+		item = rand_range_int(0, NUM_REQ);
+		for(i = 0; i < cnt && v->requests[i] != item; i++);
+		if(i == cnt) v->requests[cnt++] = item;
+	}
+}
 
 //车车通信
 extern vehicle cars[NUM_V];

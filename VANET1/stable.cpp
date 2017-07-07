@@ -3,12 +3,6 @@
 int U;
 int Ve[MAX_PASSING_VEHICLE];
 
-#define MAXN 15000
-#define INF INT_MAX
-#define MIN(a,b) ((a)<(b)?(a):(b))
-#define percent 0.5
-#define RANK 3
-
 extern int maxFlow ;//最大流：路径条数
 extern double totalDelay;//时延
 extern double _ratio;//响应率
@@ -300,38 +294,38 @@ int max_flow(struct vehicle *cars){
 	for(i=1;i<=NUM_REQ;i++){ //构建是src与C的连线
 		Edge[0][i].c = MAXN;
 		Edge[0][i].f = 0;
-		vertex[0].out++;
-		vertex[i].in++;
+		//vertex[0].out++;
+		//vertex[i].in++;
 	}
 
 	for(i=1;i<=NUM_REQ;i++){ //构建c与u的连线
 		for(j=NUM_REQ+1;j<=NUM_REQ+NUM_U*T;j++){
 			Edge[i][j].c = 1;
 			Edge[i][j].f = 0;
-			vertex[i].out++;
-			vertex[j].in++;
+			//vertex[i].out++;
+			//vertex[j].in++;
 		}
 	}
 	
 	for(i=0;i<NUM_V;i++){//构建V与u或V的连线,请求车辆不连线//*(1-percent)
 		for(t=0;t<T;t++){
 			unitAndVehicle(&cars[i],t);//已验证
-			//Edge[NUM_REQ+U*T+t+1][NUM_REQ+NUM_U*T+i*T+t+1].c = 1;
 			if(U != -1){
+			Edge[NUM_REQ+U*T+t+1][NUM_REQ+NUM_U*T+i*T+t+1].c = 1;
 			Edge[NUM_REQ+U*T+t+1][NUM_REQ+NUM_U*T+i*T+t+1].f = 0;
 			//int rank_u = ranku(&cars[i],t);//权值：基于传输距离-->模糊等级
 			//cout << "rank_u:" << rank_u<<" ";
-			vertex[NUM_REQ+U*T+t+1].out++;//U-->V
-			vertex[NUM_REQ+NUM_U*T+i*T+t+1].in++;
+			//vertex[NUM_REQ+U*T+t+1].out++;//U-->V
+			//vertex[NUM_REQ+NUM_U*T+i*T+t+1].in++;
 			}
 			for(j=0;j<MAX_PASSING_VEHICLE;j++){
 				if(Ve[j] != -1) {//需要清空Ve
-					//Edge[NUM_REQ+NUM_U*T+i*T+t+1][NUM_REQ+NUM_U*T+Ve[j]*T+t+1].c = 1;
+					Edge[NUM_REQ+NUM_U*T+i*T+t+1][NUM_REQ+NUM_U*T+Ve[j]*T+t+1].c = 1;
 					Edge[NUM_REQ+NUM_U*T+i*T+t+1][NUM_REQ+NUM_U*T+Ve[j]*T+t+1].f = 0;
 					//int rank_v = rankv(&cars[i],t,j);//权值：基于传输距离-->模糊等级
 					//cout << "rank_v:" << rank_v<<" ";
-					vertex[NUM_REQ+NUM_U*T+i*T+t+1].out++;
-					vertex[NUM_REQ+NUM_U*T+Ve[j]*T+t+1].in++;
+					//vertex[NUM_REQ+NUM_U*T+i*T+t+1].out++;
+					//vertex[NUM_REQ+NUM_U*T+Ve[j]*T+t+1].in++;
 				}
 			}
 			//cout << endl;
@@ -344,18 +338,18 @@ int max_flow(struct vehicle *cars){
 		for(j=1;j<T;j++){
 			Edge[i][i+1].c = NUM_REQ;//定义时间线的权值
 			Edge[i][i+1].f = 0;
-			vertex[i].out++;
-			vertex[i+1].in++;
+			//vertex[i].out++;
+			//vertex[i+1].in++;
 			i++;
 		}
 		i++;
 	}
 		
 	for(i=NUM_REQ+NUM_U*T+NUM_V*(1-percent)*T+1;i<n;i++){ //请求车辆与Vdes的连线
-		Edge[i][n].c = 1;
+		Edge[i][n].c = MAX_REQ;
 		Edge[i][n].f = 0;
-		vertex[i].out++;
-		vertex[n].in++;
+		//vertex[i].out++;
+		//vertex[n].in++;
 	}
 
 	//获取中继网入度最小值和最大值
@@ -372,32 +366,35 @@ int max_flow(struct vehicle *cars){
 	//system("pause");
 
 	//中继网权值定义
-	for (i = NUM_REQ + 1; i < n; i++) {//不包括请求-->Vdes的连线
-		for (j = 1; j < n; j++) {
-			if (vertex[j].in != 0 && Edge[i][j].f != INF&&Edge[i][j].c == INF) {//Edge[i][j].c == INF：隔离时间线的权值
-				//权值：初度/入度
-				/*double x = vertex[j].out / vertex[j].in;
-				int y = vertex[j].out / vertex[j].in;
-				if (x > 1.0) { Edge[i][j].c = vertex[j].out / vertex[j].in; }
-				else { Edge[i][j].c = 1; }*/
+	//for (i = NUM_REQ + 1; i < n; i++) {//不包括请求-->Vdes的连线
+	//	for (j = 1; j < n; j++) {
+	//		if (Edge[i][j].f != INF&&Edge[i][j].c == INF) {//Edge[i][j].c == INF：隔离时间线的权值，vertex[j].in != 0 && 
+	//			//权值：初度/入度
+	//			/*double x = vertex[j].out / vertex[j].in;
+	//			int y = vertex[j].out / vertex[j].in;
+	//			if (x > 1.0) { Edge[i][j].c = vertex[j].out / vertex[j].in; }
+	//			else { Edge[i][j].c = 1; }*/
 
-				//权值：出度
-				Edge[i][j].c = vertex[j].out;
-				//cout << i << "-->" << j << ":" << Edge[i][j].c << endl;
+	//			//权值：出度
+	//			//Edge[i][j].c = vertex[j].out;
+	//			//cout << i << "-->" << j << ":" << Edge[i][j].c << endl;
 
-				//权值：翻转入度：a=7、b=8、c=9、d=10,md_in=（7+10）/2 --> a_weight=7+2*(md_in-7)=min+max-a
-				//Edge[i][j].c = max_in + min_in - vertex[j].in;
-				//cout << i << "-->" << j << ":" << Edge[i][j].c << endl;
+	//			//权值：翻转入度：a=7、b=8、c=9、d=10,md_in=（7+10）/2 --> a_weight=7+2*(md_in-7)=min+max-a
+	//			//Edge[i][j].c = max_in + min_in - vertex[j].in;
+	//			//cout << i << "-->" << j << ":" << Edge[i][j].c << endl;
 
-				//权值：a*出度-（1-a）入度
-				/*float a = 0.9;
-				Edge[i][j].c = a*vertex[j].out - (1 - a)*vertex[j].in;
-				if (Edge[i][j].c < 1)
-					Edge[i][j].c = 1;
-				cout << i << "-->" << j << ":" << Edge[i][j].c << endl;*/
-			}
-		}
-	}
+	//			//权值：a*出度-（1-a）入度
+	//			/*float a = 0.9;
+	//			Edge[i][j].c = a*vertex[j].out - (1 - a)*vertex[j].in;
+	//			if (Edge[i][j].c < 1)
+	//				Edge[i][j].c = 1;
+	//			cout << i << "-->" << j << ":" << Edge[i][j].c << endl;*/
+
+	//			Edge[i][j].c = 1;
+
+	//		}
+	//	}
+	//}
 	//system("pause");
     //ford(); //标号法求解网络最大流
 	Edmonds_Karp();//广度搜索

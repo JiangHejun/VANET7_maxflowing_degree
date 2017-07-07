@@ -344,6 +344,7 @@
     <Text Include="roadunits.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="hungary.h" />
     <ClInclude Include="rand.h" />
     <ClInclude Include="real_map.h" />
     <ClInclude Include="settting.h" />
@@ -354,12 +355,14 @@
     <ClInclude Include="vehicle.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="hungary.cpp" />
     <ClCompile Include="map.cpp" />
     <ClCompile Include="rand.cpp" />
     <ClCompile Include="real_map.cpp" />
     <ClCompile Include="stable.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="unit.cpp" />
     <ClCompile Include="vehicle.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

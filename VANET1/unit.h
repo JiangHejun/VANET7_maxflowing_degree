@@ -15,4 +15,6 @@ struct unit {//路边单元信息
 	int ry;
 };
 
+void init_unit(struct unit *u);//初始化路边单元
+
 #endif

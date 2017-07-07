@@ -828,6 +828,9 @@
     <ClInclude Include="real_map.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="hungary.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="map.cpp">
@@ -849,6 +852,12 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="real_map.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="hungary.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="unit.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
