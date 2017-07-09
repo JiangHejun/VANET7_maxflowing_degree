@@ -180,11 +180,11 @@ void main(){
 	int total;
 	char filename[78] = "C:\\Users\\JiangHejun\\Desktop\\~\\车载网络\\max_flow\\maxflowing&twopart\\result.txt"; 
 	FILE *out;
-	out = fopen(filename, "at");//at:写方式打开文件，不清楚内容，指针定位到末尾。w:写方式打开文件，清楚内容
+	fopen_s(&out, filename, "at");//at:写方式打开文件，不清楚内容，指针定位到末尾。w:写方式打开文件，清楚内容
 	
 	//打印实验信息
 	if (IS_HUNGARY) {
-		fprintf(out, "采用hungary算法\n");
+		fprintf(out, "采用Hungary算法，周期T：%d，路段长：%d\n", T, HOR_LEN);
 
 		fprintf(out, "cycle     ");
 		for (i = 1; i <= C; i++)
@@ -266,7 +266,7 @@ void main(){
 	if(REAL_MAP)
 		fprintf(out, "采用真实车辆轨迹数据--三亚\n");
 	else
-		fprintf(out, "采用随机化仿真数据\n");
+		fprintf(out, "采用Edmonds_Karp算法，周期T：%d，路段长：%d\n", T, HOR_LEN);
 
 	//cycle
 	fprintf(out, "cycle     ");

@@ -2,6 +2,7 @@
 #define __VEHICLE_H__ __ZIE_IUK__
 
 #include "map.h"
+#include <cstring>
 
 struct vehicle {//车辆数组
 	struct coord route[C * T];//车辆路径

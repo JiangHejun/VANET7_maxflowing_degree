@@ -6,7 +6,7 @@
 #define T 10//周期跳数s,
 #define NUM_V 259//车辆数量
 /* Number of data items. */
-#define NUM_REQ 100//请求数据数量，hungary算法中，理解为一个包的大小。不影响
+#define NUM_REQ 300//请求数据数量，hungary算法中，理解为一个包的大小。不影响
 /* The maximum number of requests a vehicle can make during one period. */
 #define MAX_REQ 3//车辆最大请求数量
 /* Coverage radius of each vehicle. */

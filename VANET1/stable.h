@@ -7,7 +7,7 @@
 #include "real_map.h"
 #include <queue>
 
-#define MAXN 15000
+#define MAXN NUM_REQ+NUM_U*T+NUM_V*T+2
 #define INF INT_MAX
 #define MIN(a,b) ((a)<(b)?(a):(b))
 #define percent 0.5

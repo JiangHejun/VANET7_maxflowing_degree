@@ -1,6 +1,7 @@
 #include "vehicle.h"
 
 
+
 void clean_vehicle(struct vehicle *v) //车辆信息初始化
 {
 	v->nsr = 0;
